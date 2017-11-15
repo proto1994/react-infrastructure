@@ -11,7 +11,7 @@ export function* watch() {
 }
 export function* test() {
     yield call(delay, 1000);
-    yield put(homeRedux.addCount);
+    yield put(homeRedux.addCount());
 }
 
 

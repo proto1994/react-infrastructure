@@ -15,7 +15,7 @@
     ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      ".*\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js"
+      "\\.(css|less)$": "identity-obj-proxy"
     },
     "transform": {
       "^.+\\.js$": "babel-jest"
@@ -66,6 +66,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-stage-0": "^6.24.1",
     "enzyme-adapter-react-16": "^1.0.4",
+    "identity-obj-proxy": "^3.0.0",
     "prop-types": "^15.6.0"
   }
 }

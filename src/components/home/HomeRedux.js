@@ -1,5 +1,5 @@
 export const initState = {
-    count: 8
+    count: 0
 };
 
 export const HOME_ADD = "HOME_ADD";
