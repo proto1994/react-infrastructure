@@ -1,12 +1,14 @@
 import React from 'react';
 import {withRouter} from 'react-router';
-const App = ({children}) => {
+import {connect} from 'react-redux';
+import {push} from 'react-router-redux';
+const App = ({children, history, dispatch}) => {
     return (
         <div>
-           <h1 style={{color:"green"}}>react热加载、时间旅行、单元测试</h1>
+           <button onClick={() => {dispatch(push("/home"))}} style={{padding:5}}>查看文章</button>
             {children}
         </div>
     )
 }
 
-export default withRouter(App);
+export default withRouter(connect()(App));

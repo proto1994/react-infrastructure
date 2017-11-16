@@ -1,6 +1,6 @@
 # react-infrastructure
 
-## react全家桶
+## react全家桶。热加载、时间旅行、单元测试
 
 react16+react-router4+redux+redux-saga+webpack3
 

@@ -1,15 +1,18 @@
 import {createStore, replaceReducer, applyMiddleware} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { routerReducer, routerMiddleware } from 'react-router-redux';
+
 import rootReducer from './reducers';
 import rootSaga from './sagas';
-function configureStore() {
+function configureStore(history) {
     const sagaMiddleware = createSagaMiddleware();
     let store = '';
+    const middleware = [routerMiddleware(history), sagaMiddleware];
     if (process.env.NODE_ENV !== 'production') {
-        store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
+        store = createStore(rootReducer, composeWithDevTools(applyMiddleware(...middleware)));
     } else {
-        store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+        store = createStore(rootReducer, applyMiddleware(...middleware));
     }
     store.runSaga = sagaMiddleware.run;
     if (module.hot) {
@@ -19,7 +22,7 @@ function configureStore() {
             store.replaceReducer(nextRootReducer);
         });
     }
-    store.runSaga(rootSaga);
+    store.runSaga(rootSaga).done.catch((error) => console.warn(error));
     return store;
 }
 

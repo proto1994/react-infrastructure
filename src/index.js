@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import 'babel-polyfill';
 import Routes from './routes';
 import { AppContainer } from 'react-hot-loader';
+import createHistory from 'history/createBrowserHistory';
 import "./index.less";
 import configureStore from './store';
-const store = configureStore();
+const history = createHistory();
+const store = configureStore(history);
 const render = Component => {
     ReactDOM.render(
         <AppContainer>
-            <Component store={store}/>
+            <Component store={store} history={history}/>
         </AppContainer>,
         document.getElementById("root")
     )

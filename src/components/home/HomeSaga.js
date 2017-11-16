@@ -1,17 +1,16 @@
 import {take, fork, all, put, call} from 'redux-saga/effects';
 import {takeEvery,delay} from 'redux-saga'
 import * as homeRedux from './HomeRedux';
-
+import {requestGetBooks} from '../../service/books';
 
 export function* watch() {
     while(true) {
         yield take(homeRedux.HOME_ADD);
-        yield put(homeRedux.addCount());
+        yield call(getBooks);
     }
 }
-export function* test() {
-    yield call(delay, 1000);
-    yield put(homeRedux.addCount());
+export function* getBooks() {
+    const result = yield call(requestGetBooks);
 }
 
 

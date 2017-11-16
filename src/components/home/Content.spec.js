@@ -4,8 +4,9 @@ import Adapter from 'enzyme-adapter-react-16';
 import {Content} from './Content';
 import * as homeRedux from './HomeRedux';
 import * as homeSaga from './HomeSaga';
-import {takeEvery,delay} from 'redux-saga'
-import { put, call,take } from 'redux-saga/effects'
+import {takeEvery,delay} from 'redux-saga';
+import { put, call,take } from 'redux-saga/effects';
+import {requestGetBooks} from '../../service/books';
 configure({ adapter: new Adapter() });
 
 const setup = () => {
@@ -65,17 +66,17 @@ describe('home reducer', () => {
 })
 
 describe('home saga', () => {
-    const genTest = homeSaga.test();
+    const genTest = homeSaga.getBooks();
     const genWatch = homeSaga.watch();
     it('shoule handle homeSaga', () => {
-        expect(genTest.next().value).toEqual(call(delay, 1000));
-        expect(genTest.next().value).toEqual(put(homeRedux.addCount()));
-        expect(genTest.next()).toEqual({done: true,value: undefined });
+
+        // console.log(genTest.next().value, call(requestGetBooks));
+       expect(genTest.next().value).toEqual(call(requestGetBooks));
+    //    expect(genTest.next()).toEqual({done: true,value: undefined });
 
 
-        expect(genWatch.next().value).toEqual(take(homeRedux.HOME_ADD));
-
-        expect(genWatch.next().value).toEqual(put(homeRedux.addCount()));
+        // expect(genWatch.next().value).toEqual(take(homeRedux.HOME_ADD));
+        // expect(genWatch.next().value).toEqual(put(homeRedux.addCount()));
         
     })
 })

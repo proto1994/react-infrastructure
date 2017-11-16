@@ -2,3 +2,6 @@ npm-debug.log*
 node_modules/
 .idea
 coverage
+dist
+yarn.lock
+yarn-error.log
