@@ -1,0 +1,102 @@
+/*! 版权所有，翻版必究 */
+.form__page--GIlVw {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.form__login__form__bd--2QcD_ {
+  background: #fff;
+  padding: 30px 50px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all .5s;
+}
+.form__login__form__bd--2QcD_:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.form__login__line__base--3Q5Hk {
+  width: 100%;
+  padding: 10px 0;
+}
+.form__login__line__base--3Q5Hk span {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.3);
+}
+.form__login__line__base--3Q5Hk input {
+  width: 200px;
+}
+.form__login__title--GObwD {
+  text-align: center;
+  padding: 10px 0 20px 0;
+  color: rgba(0, 0, 0, 0.5);
+}
+.form__login__username--lgYLg {
+}
+.form__login__password--13MYo {
+}
+.form__login__operator--30KQk {
+}
+.form__login__operator--30KQk button {
+  width: 100%;
+  background: #1DA57A;
+  color: #fff;
+}
+.form__login__operator--30KQk .form__login__operator__in--14-sh {
+  background: #1DA57A;
+  color: #fff;
+}
+.form__login__operator--30KQk .form__login__operator__register--3Li7z {
+  padding: 15px 0 0 0;
+  color: #cccccc;
+  cursor: pointer;
+  text-align: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  font-family: "\5FAE\8F6F\96C5\9ED1";
+  min-width: 900px;
+  font-size: 12px;
+}
+input {
+  padding: 7px 4px;
+  border: none;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  transition: all .2s;
+}
+button {
+  padding: 6px 15px;
+  background: transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all .2s;
+  border: 1px solid transparent;
+}
+input:hover {
+  border-color: #999;
+}
+button:hover {
+  opacity: .9;
+}
+::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+/*# sourceMappingURL=style.css.map*/
