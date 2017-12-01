@@ -31,14 +31,20 @@ export  default async function request(url, options = {}) {
     return await axios(params).catch(errHandle).then(parse);
 }
 function errHandle(res) {
-   alert("错误"+JSON.stringify(res));
+    swal({
+        title: '请求失败',
+        text: JSON.stringify(res.message),
+        icon: "error",
+    });
+    return;
 }
 function parse(response) {
+    if (!response) throw "404";
     let result = response.data;
     if (!result) {
         throw "服务器返回数据错误";
     }
-    if (result.errcode == 401) {
+    if (result.code == 404) {
         throw result;
     }
     if (result.errcode != 0) {

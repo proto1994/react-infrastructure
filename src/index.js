@@ -4,6 +4,7 @@ import 'babel-polyfill';
 import Routes from './routes';
 import { AppContainer } from 'react-hot-loader';
 import createHistory from 'history/createBrowserHistory';
+import 'sweetalert';
 import "./index.less";
 import configureStore from './store';
 const history = createHistory();

@@ -1,0 +1,66 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //flex-direction: column;
+}
+
+.login__form__bd {
+  background: #fff;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: all .5s;
+}
+.login__form__bd:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+}
+.login__line__base {
+  width: 100%;
+  padding: 10px 0;
+  span {
+    display: inline-block;
+    color: rgba(0, 0, 0, .3);
+  }
+  input {
+    width: 200px;
+  }
+
+}
+.login__title {
+  text-align: center;
+  padding: 10px 0 20px 0;
+  color: rgba(0, 0, 0, .5);
+}
+.login__username {
+  composes: login__line__base;
+}
+.login__password {
+  composes: login__line__base;
+}
+
+.login__operator {
+  composes: login__line__base;
+  button {
+    width: 100%;
+    background: #1DA57A;
+    color: #fff;
+  }
+  .login__operator__in {
+    background: #1DA57A;
+    color: #fff;
+  }
+  .login__operator__register {
+    padding: 15px 0 0 0;
+    color: #cccccc;
+    cursor: pointer;
+    text-align: center;
+  }
+}
+
+

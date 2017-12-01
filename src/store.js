@@ -3,8 +3,8 @@ import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 
-import rootReducer from './reducers';
-import rootSaga from './sagas';
+import rootReducer from './ducks/reducers';
+import rootSaga from './ducks/sagas';
 function configureStore(history) {
     const sagaMiddleware = createSagaMiddleware();
     let store = '';
@@ -17,8 +17,8 @@ function configureStore(history) {
     store.runSaga = sagaMiddleware.run;
     if (module.hot) {
         // Enable Webpack hot module replacement for reducers
-        module.hot.accept('./reducers', () => {
-            const nextRootReducer = require('./reducers/index').default;
+        module.hot.accept('./ducks/reducers', () => {
+            const nextRootReducer = require('./ducks/reducers').default;
             store.replaceReducer(nextRootReducer);
         });
     }

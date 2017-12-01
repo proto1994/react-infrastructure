@@ -1,4 +1,37 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    outline:none;
+}
+body {
+    font-family: "微软雅黑";
+    min-width: 900px;
+    font-size: 12px;
+}
+
+input {
+    padding: 7px 4px;
+    border: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    transition: all .2s;
+}
+
+button {
+    padding: 6px 15px;
+    background: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .2s;
+    border: 1px solid transparent;
+}
+input:hover {
+    border-color: #999;
+}
+button:hover {
+    opacity: .9;
+}
+::-webkit-input-placeholder {
+    color: #ccc;
 }

@@ -46,15 +46,13 @@ module.exports = {
     },
 
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.jsx|\.js/, 
                 use: {
                     loader: "babel-loader",
                 },
                 exclude: /node_modules/
-            },
-            {
+            }, {
                 test: /\.less$/,
                 exclude: /node_modules/,
                 use: env ? ExtractTextPlugin.extract({
@@ -74,8 +72,10 @@ module.exports = {
                         localIdentName: '[name]__[local]--[hash:base64:5]'
                     }
                 }, "postcss-loader",  "less-loader"]
-            }
-        ]
+            }, {
+                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+                use: ['file-loader?limit=1000&name=files/[md5:hash:base64:10].[ext]']
+            }]
     },
     plugins,
     devServer: {

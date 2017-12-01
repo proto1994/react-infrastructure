@@ -1,5 +1,8 @@
+import {take, fork, all, put, call} from 'redux-saga/effects';
+import {takeEvery,delay} from 'redux-saga';
+import {requestGetBooks} from '../service/books';
 export const initState = {
-    count: 0
+    count: 3
 };
 
 export const HOME_ADD = "HOME_ADD";
@@ -17,8 +20,7 @@ export function reduceCount() {
     }
 }
 
-
-export const reducer = (state=initState, action) => {
+export default function reducer(state=initState, action) {
     switch (action.type) {
         case HOME_ADD:
             return {
@@ -35,4 +37,21 @@ export const reducer = (state=initState, action) => {
     }
 };
 
-export default reducer;
+
+function* watch() {
+    while(true) {
+        yield take(HOME_ADD);
+        yield call(getBooks);
+    }
+}
+function* getBooks() {
+    const result = yield call(requestGetBooks);
+}
+
+
+export function* rootHomeSaga() {
+    yield all([
+        fork(watch)
+    ])
+}
+
