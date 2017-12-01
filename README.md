@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/michaelliao/openweixin.svg?branch=master)](https://travis-ci.org/michaelliao/openweixin)
+[![Build Status](https://img.shields.io/travis/xcatliu/pagic.svg)](https://travis-ci.org/xcatliu/pagic)
+
 # react-infrastructure
 
 ## react全家桶。热加载、时间旅行、单元测试
