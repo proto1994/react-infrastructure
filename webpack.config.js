@@ -16,7 +16,7 @@ let plugins = [
         }
     }),
 ];
-let app = [ROOT_PATH+"/src/index.js"];
+
 if (env) {
     plugins.push(
         new ExtractTextPlugin("style.css"),
@@ -26,15 +26,14 @@ if (env) {
             comments: false
         }))
 } else {
-    plugins.push(new webpack.HotModuleReplacementPlugin());
-    app.unshift('react-hot-loader/patch', 'webpack/hot/only-dev-server');
+    plugins.push(new webpack.HotModuleReplacementPlugin())
 }
 
 module.exports = {
     devtool: env ? 'source-map' : 'eval-source-map', //
     entry: {
         vendor: ['react', 'react-dom', 'react-router', 'redux', 'react-redux'],
-        app
+        app: ['react-hot-loader/patch', 'webpack/hot/only-dev-server', ROOT_PATH+"/src/index.js"]
     },
     output: {
         path: path.resolve(ROOT_PATH, 'dist'),

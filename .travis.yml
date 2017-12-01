@@ -10,19 +10,6 @@ install:
 script:
   - npm run build
 
-after_script:
-  - git checkout gh-pages
-  - git merge master
-#  - git config user.name "lifengsofts"
-#  - git config user.email "lifengsofts@gmail.com"
-  - git add .
-  - git commit -m "Update docs"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
-# E: Build LifeCycle
-env:
- global:
-   - GH_REF: github.com/proto1994/react-infrastructure.git
-
 #指定分支，只有指定的分支提交时才会运行脚本
 branches:
   only:
