@@ -9,7 +9,7 @@ script:
   - npm run build
 #运行的脚本命令
 after_script:
-  — cd ./dist
+  - cd ./dist
   - git init
   - git config user.name "proto2014"
   - git config user.email "1124519515@qq.com"
