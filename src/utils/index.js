@@ -4,3 +4,8 @@ export function getUrlParam(name) {
     if (r != null) return unescape(r[1]);
     return '';
 }
+
+export function sum(a, b) {
+    return a + b;
+}
+  
